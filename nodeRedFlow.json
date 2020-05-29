@@ -1,0 +1,14 @@
+[
+  {
+    "id": "319c0594.3b8c8a",
+    "type": "function",
+    "z": "8b8f3d25.e57d3",
+    "name": "sample",
+    "func": "msg.payload.text=\"\";\nif(msg.payload.context.webhook_result_1){\n    for(var i in msg.payload.context.webhook_result_1.results){\n    msg.payload.text=msg.payload.text+'\\n'+msg.payload.context.webhook_result_1.results[i].text;\n}\n    msg.payload=msg.payload.text;\n}\n\nelse\nmsg.payload = msg.payload.output.text[0];\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 688,
+    "y": 249,
+    "wires": [["78854556.fb421c"]]
+  }
+]
